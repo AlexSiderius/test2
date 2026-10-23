@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="site-data.js"></script>
+<style>*{box-sizing:border-box}body{margin:0;background:#F5F2EC;color:#15130F;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#15130F;text-underline-offset:3px}a:hover{color:#B4570A}img{max-width:100%}::selection{background:#F7931E;color:#15130F}</style>
+</helmet>
+<div style="min-height:100vh;background:#F5F2EC;color:#15130F;font-family:'Hanken Grotesk',system-ui,sans-serif">
+<dc-import name="Site Header" active="Portfolio" hint-size="100%,76px"></dc-import>
+
+<section data-screen-label="Portfolio intro" style="padding:clamp(56px,8vw,112px) 0 clamp(40px,5vw,64px)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 56px">
+    <h1 style="flex:1 1 520px;min-width:0;font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(46px,6.8vw,104px);line-height:.96;letter-spacing:-0.035em;margin:0;text-wrap:balance">Een selectie uit mijn <span style="background:linear-gradient(transparent 60%,#F7931E 60%,#F7931E 92%,transparent 92%);padding:0 .04em">portfolio</span></h1>
+    <div style="flex:1 1 340px;min-width:0;max-width:46ch;display:flex;flex-direction:column;gap:14px;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#5B564D">
+      <p style="margin:0;text-wrap:pretty">Benieuwd wat ik tot nu toe heb gemaakt? Hieronder vind je een selectie van afgeronde projecten.</p>
+      <p style="margin:0;text-wrap:pretty">Van de ijssalon om de hoek tot een groot cybersecuritybedrijf: hieronder zie je een selectie van projecten die ik heb opgeleverd.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Portfolio grid" style="padding:0 0 clamp(72px,10vw,128px)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(28px,3vw,40px) 24px">
+      <sc-for list="{{ visible }}" as="p" hint-placeholder-count="9">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:16px;text-decoration:none;color:#15130F">
+          <div style="background:#FFFFFF;border:1px solid rgba(21,19,15,.09);border-radius:20px;padding:8px;box-shadow:0 1px 0 rgba(21,19,15,.04);transition:box-shadow .3s,transform .3s" style-hover="box-shadow:0 24px 48px -24px rgba(21,19,15,.35);transform:translateY(-3px)">
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 6px 10px;min-width:0"><span style="flex:none;width:9px;height:9px;border-radius:50%;background:#E4DED3"></span><span style="flex:none;width:9px;height:9px;border-radius:50%;background:#E4DED3"></span><span style="flex:none;width:9px;height:9px;border-radius:50%;background:#E4DED3"></span><span style="margin-left:8px;font-size:12.5px;color:#5B564D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.label }}</span></div>
+            <div style="height:400px;overflow:hidden;border-radius:12px;background:#F1ECE3"><img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="display:block;width:100%;height:auto;transition:transform 1.2s cubic-bezier(.4,0,.2,1)" style-hover="transform:translateY(calc(-100% + 400px));transition:transform 7s cubic-bezier(.45,0,.55,1)"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:0 4px"><span style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2">{{ p.name }}</span><span style="flex:none;color:#B4570A;font-size:18px">↗</span></div>
+        </a>
+      </sc-for>
+    </div>
+    <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:clamp(48px,6vw,72px)">
+        <button onClick="{{ more }}" style="display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;border:1.5px solid #15130F;background:transparent;color:#15130F;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;cursor:pointer;transition:background .2s,color .2s" style-hover="background:#15130F;color:#F5F2EC">Meer bekijken</button>
+        <span style="font-size:14px;color:#5B564D;font-variant-numeric:tabular-nums">{{ countLabel }}</span>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<dc-import name="Site Footer" hint-size="100%,1400px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;perPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[9,12,18],&quot;default&quot;:12,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { n: this.props.perPage ?? 12, ready: !!window.WA };
+  componentDidMount() {
+    if (!window.WA) this.t = setInterval(() => { if (window.WA) { clearInterval(this.t); this.setState({ ready: true }); } }, 50);
+  }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    const all = (window.WA && window.WA.projects) || [];
+    const step = this.props.perPage ?? 12;
+    const vis = all.slice(0, this.state.n).map(p => ({ ...p, href: 'Project.dc.html#' + p.slug, label: p.domain || p.name }));
+    return {
+      visible: vis,
+      hasMore: all.length === 0 || this.state.n < all.length,
+      countLabel: Math.min(this.state.n, all.length) + ' van ' + all.length + ' projecten',
+      more: () => this.setState(s => ({ n: s.n + step }))
+    };
+  }
+}
+</script>
+</body>
+</html>

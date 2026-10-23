@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="site-data.js"></script>
+<style>*{box-sizing:border-box}body{margin:0;background:#F5F2EC;color:#15130F;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#15130F;text-underline-offset:3px}a:hover{color:#B4570A}img{max-width:100%}::selection{background:#F7931E;color:#15130F}</style>
+</helmet>
+<div style="min-height:100vh;background:#F5F2EC;color:#15130F;font-family:'Hanken Grotesk',system-ui,sans-serif">
+<dc-import name="Site Header" active="Portfolio" hint-size="100%,76px"></dc-import>
+
+<section data-screen-label="Project" style="padding:clamp(28px,4vw,48px) 0 clamp(64px,8vw,112px);overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <a href="Portfolio.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#5B564D;text-decoration:none;margin-bottom:clamp(32px,4.5vw,56px)" style-hover="color:#15130F">← Terug naar het portfolio overzicht</a>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:48px clamp(40px,6vw,88px)">
+      <div style="flex:1 1 420px;min-width:0">
+        <h1 style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(42px,5.6vw,84px);line-height:.98;letter-spacing:-0.035em;margin:0 0 28px;text-wrap:balance">{{ p.name }}</h1>
+        <p style="font-size:clamp(19px,1.7vw,22px);line-height:1.5;font-weight:600;margin:0 0 20px;text-wrap:pretty">Ik heb het genoegen gehad om voor {{ p.name }} een website te realiseren die niet alleen functioneert als professioneel visitekaartje, maar ook resultaat oplevert!</p>
+        <p style="font-size:17.5px;line-height:1.7;color:#5B564D;margin:0 0 34px;text-wrap:pretty">Samen met deze klant is er gewerkt aan een professionele online uitstraling die perfect aansluit bij hun doelgroep. Van het eerste ontwerp tot de technische optimalisatie voor zoekmachines. Elk detail is zorgvuldig uitgewerkt om maximale professionaliteit en vindbaarheid te bewerkstelligen.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;padding:17px 26px;border-radius:999px;background:#F7931E;color:#15130F;font-weight:600;font-size:16.5px;text-decoration:none;transition:background .2s" style-hover="background:#FFA640;color:#15130F">Offerte aanvragen <span>→</span></a>
+          <sc-if value="{{ hasSite }}" hint-placeholder-val="{{ true }}">
+            <a href="{{ siteUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:15.5px 24.5px;border-radius:999px;border:1.5px solid #15130F;color:#15130F;font-weight:600;font-size:16.5px;text-decoration:none;transition:background .2s,color .2s" style-hover="background:#15130F;color:#F5F2EC">Bekijk deze website ↗</a>
+          </sc-if>
+        </div>
+        <div style="padding-top:28px;border-top:1px solid rgba(21,19,15,.12);display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <img src="https://webaware.nl/wp-content/uploads/2024/11/f564fc3bc613d9922753b6c17f447415-removebg-preview.png" alt="Google" style="width:28px;height:28px;display:block">
+            <span style="color:#E07F0A;letter-spacing:2px;font-size:17px">★★★★★</span>
+            <span style="font-weight:600;font-size:16px">Gewaardeerd met een 5/5!</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 24px">
+            <div style="display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#F7931E;display:grid;place-items:center"><span style="width:6px;height:10px;border-right:2px solid #15130F;border-bottom:2px solid #15130F;transform:translateY(-1px) rotate(45deg)"></span></span>100+ tevreden klanten</div>
+            <div style="display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#F7931E;display:grid;place-items:center"><span style="width:6px;height:10px;border-right:2px solid #15130F;border-bottom:2px solid #15130F;transform:translateY(-1px) rotate(45deg)"></span></span>Altijd een passende oplossing</div>
+            <div style="display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#F7931E;display:grid;place-items:center"><span style="width:6px;height:10px;border-right:2px solid #15130F;border-bottom:2px solid #15130F;transform:translateY(-1px) rotate(45deg)"></span></span>Persoonlijk contact</div>
+            <div style="display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#F7931E;display:grid;place-items:center"><span style="width:6px;height:10px;border-right:2px solid #15130F;border-bottom:2px solid #15130F;transform:translateY(-1px) rotate(45deg)"></span></span>Volledige ontzorging</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1.15 1 460px;min-width:0;position:relative;padding:0 0 40px">
+        <div style="background:#FFFFFF;border:1px solid rgba(21,19,15,.09);border-radius:22px;padding:9px;box-shadow:0 40px 80px -40px rgba(21,19,15,.4)">
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 6px 11px;min-width:0"><span style="flex:none;width:10px;height:10px;border-radius:50%;background:#E4DED3"></span><span style="flex:none;width:10px;height:10px;border-radius:50%;background:#E4DED3"></span><span style="flex:none;width:10px;height:10px;border-radius:50%;background:#E4DED3"></span><span style="margin-left:10px;flex:1;min-width:0;padding:5px 12px;border-radius:999px;background:#F5F2EC;font-size:12.5px;color:#5B564D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ urlLabel }}</span></div>
+          <div style="height:clamp(420px,46vw,620px);overflow:hidden;border-radius:13px;background:#F1ECE3"><img src="{{ p.img }}" alt="{{ p.name }}" style="display:block;width:100%;height:auto;transition:transform 1.4s cubic-bezier(.4,0,.2,1)" style-hover="transform:translateY(calc(-100% + clamp(420px,46vw,620px)));transition:transform 9s cubic-bezier(.45,0,.55,1)"></div>
+        </div>
+        <div style="position:absolute;right:clamp(-8px,-1vw,0px);bottom:0;width:clamp(130px,13vw,176px);aspect-ratio:9/19;background:#15130F;border-radius:30px;padding:7px;box-shadow:0 30px 60px -24px rgba(21,19,15,.6)">
+          <div style="position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:#F1ECE3">
+            <img src="{{ p.img }}" alt="" style="display:block;width:100%;height:auto">
+            <span style="position:absolute;top:7px;left:50%;transform:translateX(-50%);width:38%;height:14px;border-radius:999px;background:#15130F"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:clamp(48px,6vw,80px);padding-top:28px;border-top:1.5px solid #15130F">
+      <a href="{{ prev.href }}" style="display:flex;flex-direction:column;gap:4px;text-decoration:none;color:#15130F;min-width:0" style-hover="color:#B4570A"><span style="font-size:14px;color:#5B564D">← Vorig project</span><span style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(19px,1.8vw,24px);letter-spacing:-0.01em">{{ prev.name }}</span></a>
+      <a href="{{ next.href }}" style="display:flex;flex-direction:column;gap:4px;align-items:flex-end;text-align:right;text-decoration:none;color:#15130F;min-width:0" style-hover="color:#B4570A"><span style="font-size:14px;color:#5B564D">Volgend project →</span><span style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(19px,1.8vw,24px);letter-spacing:-0.01em">{{ next.name }}</span></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Meer uit mijn portfolio" style="padding:0 clamp(8px,1.4vw,18px) clamp(8px,1.4vw,18px)">
+  <div style="background:#15130F;border-radius:clamp(24px,3vw,40px);padding:clamp(48px,6vw,80px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);color:#F5F2EC">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:clamp(28px,3.5vw,44px)">
+      <h2 style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-0.03em;margin:0;color:#F5F2EC">Meer uit mijn portfolio</h2>
+      <a href="Portfolio.dc.html" style="padding:11px 20px;border-radius:999px;background:#F7931E;color:#15130F;text-decoration:none;font-size:15px;font-weight:600;transition:background .2s" style-hover="background:#FFA640;color:#15130F">Volledig portfolio bekijken →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+      <sc-for list="{{ more }}" as="m" hint-placeholder-count="4">
+        <a href="{{ m.href }}" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:#F5F2EC">
+          <div style="background:#26231E;border:1px solid rgba(245,242,236,.08);border-radius:18px;padding:8px">
+            <div style="height:300px;overflow:hidden;border-radius:10px;background:#0E0D0B"><img src="{{ m.img }}" alt="{{ m.name }}" loading="lazy" style="display:block;width:100%;height:auto;transition:transform 1.2s cubic-bezier(.4,0,.2,1)" style-hover="transform:translateY(calc(-100% + 300px));transition:transform 6s cubic-bezier(.45,0,.55,1)"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:0 4px"><span style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.01em">{{ m.name }}</span><span style="color:#F7931E;font-size:17px">↗</span></div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<dc-import name="Site Footer" cta-title="Ook zo'n website laten maken?" hint-size="100%,1400px"></dc-import>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { slug: (typeof location !== 'undefined' && location.hash.slice(1)) || '', ready: !!window.WA };
+  componentDidMount() {
+    this.onHash = () => { this.setState({ slug: location.hash.slice(1) }); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    window.addEventListener('hashchange', this.onHash);
+    if (!window.WA) this.t = setInterval(() => { if (window.WA) { clearInterval(this.t); this.setState({ ready: true }); } }, 50);
+  }
+  componentWillUnmount() { window.removeEventListener('hashchange', this.onHash); clearInterval(this.t); }
+  renderVals() {
+    const all = (window.WA && window.WA.projects) || [];
+    const empty = { name: '', img: '', domain: '', slug: '' };
+    if (!all.length) return { p: empty, hasSite: false, siteUrl: '', urlLabel: '', prev: { href: '#', name: '' }, next: { href: '#', name: '' }, more: [] };
+    let i = all.findIndex(x => x.slug === this.state.slug); if (i < 0) i = 0;
+    const p = all[i];
+    const link = x => ({ ...x, href: 'Project.dc.html#' + x.slug });
+    const at = k => all[(k + all.length) % all.length];
+    return {
+      p, hasSite: !!p.domain, siteUrl: 'https://' + p.domain, urlLabel: p.domain || p.name,
+      prev: link(at(i - 1)), next: link(at(i + 1)),
+      more: [1, 2, 3, 4].map(k => link(at(i + k)))
+    };
+  }
+}
+</script>
+</body>
+</html>

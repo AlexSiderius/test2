@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+<section id="contact" data-screen-label="Contact CTA" style="scroll-margin-top:80px;padding:0 clamp(8px,1.4vw,18px);font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="background:#F7931E;color:#15130F;border-radius:clamp(24px,3vw,40px);padding:clamp(48px,7vw,96px) 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px clamp(40px,6vw,88px)">
+      <div style="flex:1 1 360px;min-width:0">
+        <h2 style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(42px,5.6vw,80px);line-height:.98;letter-spacing:-0.035em;margin:0 0 22px;text-wrap:balance">{{ ctaTitle }}</h2>
+        <p style="font-size:clamp(19px,1.7vw,22px);line-height:1.5;margin:0 0 40px;max-width:30ch">Maak dan een afspraak. Het is geheel vrijblijvend, echt waar.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px">
+          <img src="https://webaware.nl/wp-content/uploads/2024/11/Screenshot-2024-07-27-014247.png" alt="Alex Siderius" loading="lazy" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;border:3px solid #15130F">
+          <div><div style="font-weight:700;font-size:18px">Alex Siderius</div><div style="font-size:16px">Eigenaar Webaware</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;border-top:1.5px solid #15130F">
+          <a href="tel:0637418075" style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(21,19,15,.25);text-decoration:none;color:#15130F;transition:padding .2s" style-hover="color:#15130F;padding-left:6px"><span style="font-size:15px;font-weight:500">Telefoon</span><span style="font-weight:700;font-size:17px">06-37418075</span></a>
+          <a href="mailto:info@webaware.nl" style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(21,19,15,.25);text-decoration:none;color:#15130F;transition:padding .2s" style-hover="color:#15130F;padding-left:6px"><span style="font-size:15px;font-weight:500">E-mail</span><span style="font-weight:700;font-size:17px">info@webaware.nl</span></a>
+          <a href="https://wa.me/+31637418075" style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(21,19,15,.25);text-decoration:none;color:#15130F;transition:padding .2s" style-hover="color:#15130F;padding-left:6px"><span style="font-size:15px;font-weight:500">WhatsApp</span><span style="font-weight:700;font-size:17px">WhatsApp sturen →</span></a>
+        </div>
+      </div>
+      <div style="flex:1 1 420px;min-width:0;background:#FFFFFF;border-radius:28px;padding:clamp(24px,3.2vw,40px);box-shadow:0 30px 60px -30px rgba(21,19,15,.45)">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:18px">
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;font-weight:600">Naam*<input required="" name="naam" type="text" style="width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(21,19,15,.18);background:#FAF8F4;font-family:'Hanken Grotesk',sans-serif;font-size:16px;color:#15130F;outline:none;box-sizing:border-box" style-focus="border-color:#15130F;background:#FFFFFF"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;font-weight:600">E-mailadres*<input required="" name="email" type="email" style="width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(21,19,15,.18);background:#FAF8F4;font-family:'Hanken Grotesk',sans-serif;font-size:16px;color:#15130F;outline:none;box-sizing:border-box" style-focus="border-color:#15130F;background:#FFFFFF"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;font-weight:600">Telefoonnummer<input name="telefoon" type="tel" style="width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(21,19,15,.18);background:#FAF8F4;font-family:'Hanken Grotesk',sans-serif;font-size:16px;color:#15130F;outline:none;box-sizing:border-box" style-focus="border-color:#15130F;background:#FFFFFF"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;font-weight:600">Vragen of opmerkingen*<textarea required="" name="bericht" rows="4" style="width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(21,19,15,.18);background:#FAF8F4;font-family:'Hanken Grotesk',sans-serif;font-size:16px;line-height:1.5;color:#15130F;outline:none;resize:vertical;box-sizing:border-box" style-focus="border-color:#15130F;background:#FFFFFF"></textarea></label>
+            <button type="submit" style="margin-top:6px;width:100%;padding:18px 24px;border-radius:999px;border:0;background:#15130F;color:#F5F2EC;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:17px;cursor:pointer;transition:background .2s" style-hover="background:#2E2A24">Aanvraag verzenden</button>
+            <div style="font-size:14px;color:#5B564D;text-align:center">Na het versturen ontvang je binnen 24 uur reactie!</div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="min-height:420px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:18px">
+            <span style="width:56px;height:56px;border-radius:50%;background:#F7931E;display:grid;place-items:center"><span style="width:12px;height:22px;border-right:3px solid #15130F;border-bottom:3px solid #15130F;transform:translateY(-2px) rotate(45deg)"></span></span>
+            <div style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:34px;letter-spacing:-0.02em;line-height:1.05">Aanvraag verzonden!</div>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:#5B564D">Je ontvangt binnen 24 uur reactie van Alex.</p>
+            <button onClick="{{ resetForm }}" style="padding:0;border:0;background:none;color:#15130F;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Nog een aanvraag versturen</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+<footer data-screen-label="Footer" style="background:#15130F;color:#F5F2EC;margin-top:clamp(8px,1.4vw,18px);font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 32px">
+    <img src="https://webaware.nl/wp-content/uploads/2024/11/Websites-Online-Marketing-1-1024x256-1.webp" alt="Webaware Websites &amp; Online Marketing" loading="lazy" style="height:64px;width:auto;display:block;margin:0 0 48px -6px">
+    <div style="display:flex;flex-wrap:wrap;gap:40px clamp(40px,6vw,88px);padding-bottom:48px;border-bottom:1px solid rgba(245,242,236,.14)">
+      <div style="flex:1.5 1 340px;min-width:0">
+        <h4 style="margin:0 0 16px;font-size:14px;font-weight:600;color:#A39D92">Snel naar</h4>
+        <p style="margin:0 0 22px;font-size:16px;line-height:1.75;color:#F5F2EC;max-width:58ch;text-wrap:pretty">Een <a href="Webaware%20Home.dc.html" style="color:#F5F2EC" style-hover="color:#F7931E">webdesignbureau in Amsterdam</a> met kennis van online marketing. Ik bouw <a href="https://webaware.nl/zzp-website-laten-maken/" style="color:#F5F2EC" style-hover="color:#F7931E">websites voor ZZP-ers</a> en het MKB. Ik werk o.a. voor organisaties uit <a href="https://webaware.nl/website-laten-maken-almere/" style="color:#F5F2EC" style-hover="color:#F7931E">Almere</a>, <a href="https://webaware.nl/website-laten-maken-haarlem/" style="color:#F5F2EC" style-hover="color:#F7931E">Haarlem</a>, <a href="https://webaware.nl/website-laten-maken-weesp/" style="color:#F5F2EC" style-hover="color:#F7931E">Weesp</a>, <a href="https://webaware.nl/website-laten-maken-leiden/" style="color:#F5F2EC" style-hover="color:#F7931E">Leiden</a>, <a href="https://webaware.nl/website-laten-maken-badhoevedorp/" style="color:#F5F2EC" style-hover="color:#F7931E">Badhoevedorp</a>, <a href="https://webaware.nl/website-laten-maken-amstelveen/" style="color:#F5F2EC" style-hover="color:#F7931E">Amstelveen</a>, <a href="https://webaware.nl/website-laten-maken-leiden/" style="color:#F5F2EC" style-hover="color:#F7931E">Leiden</a>, <a href="https://webaware.nl/website-laten-maken-purmerend/" style="color:#F5F2EC" style-hover="color:#F7931E">Purmerend</a> &amp; kom graag bij u langs!</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
+          <a href="https://webaware.nl/locaties/" style="font-weight:600;font-size:15.5px;color:#F7931E;text-decoration:none" style-hover="color:#FFB560">Alle locaties bekijken →</a>
+          <a href="https://webaware.nl/wordpress-handleiding/" style="font-weight:600;font-size:15.5px;color:#F7931E;text-decoration:none" style-hover="color:#FFB560">Wordpress Handleiding →</a>
+        </div>
+      </div>
+      <div style="flex:1 1 260px;min-width:0">
+        <h4 style="margin:0 0 16px;font-size:14px;font-weight:600;color:#A39D92">Contactgegevens</h4>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:16px;line-height:1.5">
+          <span style="color:#A39D92">Telefoon</span><a href="tel:0637418075" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">06-37418075</a>
+          <span style="color:#A39D92">E-mail</span><a href="mailto:info@webaware.nl" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">info@webaware.nl</a>
+          <span style="color:#A39D92">WhatsApp</span><a href="https://wa.me/+31637418075" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">WhatsApp sturen</a>
+          <span style="color:#A39D92">Adres</span><a href="https://www.google.com/maps/place/Webaware+Webdesign+Amsterdam/@52.3419868,4.79424,17z" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">Akerpolderstraat 45, Amsterdam</a>
+        </div>
+      </div>
+      <div style="flex:0 1 180px;min-width:0">
+        <h4 style="margin:0 0 16px;font-size:14px;font-weight:600;color:#A39D92">Webaware</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:16px">
+          <a href="https://webaware.nl/partners/" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">Partners</a>
+          <a href="https://webaware.nl/wp-content/uploads/2024/11/Nederland-ICT-Voorwaarden-2014-NL.pdf" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">Algemene Voorwaarden</a>
+          <a href="https://webaware.nl/sitemap_index.xml" style="color:#F5F2EC;text-decoration:none" style-hover="color:#F7931E">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:28px;font-size:14px;line-height:1.6;color:#A39D92">
+      <span>Copyright © 2025 • Websites voor zzp en kleine bedrijven • Webaware Websites &amp; Online Marketing Amsterdam</span>
+      <span>Webaware • Akerpolderstraat 45 • 1066ET • Amsterdam</span>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/+31637418075" style="position:fixed;right:clamp(14px,2vw,24px);bottom:clamp(14px,2vw,24px);z-index:60;display:flex;align-items:center;gap:10px;padding:12px 20px 12px 12px;border-radius:999px;background:#15130F;color:#F5F2EC;text-decoration:none;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;box-shadow:0 14px 34px -12px rgba(21,19,15,.55);transition:transform .2s" style-hover="color:#F5F2EC;transform:translateY(-2px)"><span style="width:30px;height:30px;border-radius:50%;background:#25D366;display:grid;place-items:center"><span style="width:12px;height:12px;border-radius:50% 50% 50% 2px;background:#15130F"></span></span>WhatsApp sturen</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1400},&quot;cta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;ctaTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Nieuwe website laten maken?&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      showCta: this.props.cta ?? true,
+      ctaTitle: this.props.ctaTitle ?? 'Nieuwe website laten maken?',
+      sent: this.state.sent, notSent: !this.state.sent,
+      onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); },
+      resetForm: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

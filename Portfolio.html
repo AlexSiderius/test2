@@ -62,7 +62,7 @@ class Component extends DCLogic {
   renderVals() {
     const all = (window.WA && window.WA.projects) || [];
     const step = this.props.perPage ?? 12;
-    const vis = all.slice(0, this.state.n).map(p => ({ ...p, href: 'Project.dc.html#' + p.slug, label: p.domain || p.name }));
+    const vis = all.slice(0, this.state.n).map(p => ({ ...p, href: 'Project.html#' + p.slug, label: p.domain || p.name }));
     return {
       visible: vis,
       hasMore: all.length === 0 || this.state.n < all.length,

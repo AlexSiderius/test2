@@ -19,7 +19,7 @@
 
 <section data-screen-label="Project" style="padding:clamp(28px,4vw,48px) 0 clamp(64px,8vw,112px);overflow:hidden">
   <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
-    <a href="Portfolio.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#5B564D;text-decoration:none;margin-bottom:clamp(32px,4.5vw,56px)" style-hover="color:#15130F">← Terug naar het portfolio overzicht</a>
+    <a href="Portfolio.html" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#5B564D;text-decoration:none;margin-bottom:clamp(32px,4.5vw,56px)" style-hover="color:#15130F">← Terug naar het portfolio overzicht</a>
     <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:48px clamp(40px,6vw,88px)">
       <div style="flex:1 1 420px;min-width:0">
         <h1 style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(42px,5.6vw,84px);line-height:.98;letter-spacing:-0.035em;margin:0 0 28px;text-wrap:balance">{{ p.name }}</h1>
@@ -69,7 +69,7 @@
   <div style="background:#15130F;border-radius:clamp(24px,3vw,40px);padding:clamp(48px,6vw,80px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);color:#F5F2EC">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:clamp(28px,3.5vw,44px)">
       <h2 style="font-family:'Funnel Display',sans-serif;font-weight:600;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-0.03em;margin:0;color:#F5F2EC">Meer uit mijn portfolio</h2>
-      <a href="Portfolio.dc.html" style="padding:11px 20px;border-radius:999px;background:#F7931E;color:#15130F;text-decoration:none;font-size:15px;font-weight:600;transition:background .2s" style-hover="background:#FFA640;color:#15130F">Volledig portfolio bekijken →</a>
+      <a href="Portfolio.html" style="padding:11px 20px;border-radius:999px;background:#F7931E;color:#15130F;text-decoration:none;font-size:15px;font-weight:600;transition:background .2s" style-hover="background:#FFA640;color:#15130F">Volledig portfolio bekijken →</a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
       <sc-for list="{{ more }}" as="m" hint-placeholder-count="4">
@@ -103,7 +103,7 @@ class Component extends DCLogic {
     if (!all.length) return { p: empty, hasSite: false, siteUrl: '', urlLabel: '', prev: { href: '#', name: '' }, next: { href: '#', name: '' }, more: [] };
     let i = all.findIndex(x => x.slug === this.state.slug); if (i < 0) i = 0;
     const p = all[i];
-    const link = x => ({ ...x, href: 'Project.dc.html#' + x.slug });
+    const link = x => ({ ...x, href: 'Project.html#' + x.slug });
     const at = k => all[(k + all.length) % all.length];
     return {
       p, hasSite: !!p.domain, siteUrl: 'https://' + p.domain, urlLabel: p.domain || p.name,
